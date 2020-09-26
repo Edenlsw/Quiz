@@ -1,5 +1,6 @@
+
 // the questions below with answers
-const questions = [
+export const questions = [
   {
     question:
       "Which rap duo joined forces to release the album Watch The Throne in 2011?",

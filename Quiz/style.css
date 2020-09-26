@@ -1,3 +1,4 @@
+/* box sizing */
 *,
 *::before,
 *::after {
@@ -7,11 +8,11 @@
     text-align: center;
 }
 
-:root {
+/* :root {
     --hue-neutral: 200;
     --hue-wrong: 0;
     --hue-correct: 145;
-}
+} */
 
 body {
     --hue: var(--hue-neutral);
@@ -23,26 +24,27 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #ffd1bd;
-    /* background-color: hsl(var(--hue),100%, 20%); */
+    
 
 }
 
+/* changes background colour depending on answer */
 body.correct {
-    --hue: var(--hue-correct);
+    background-color: green;
 }
 
 body.wrong {
-    --hue: var(--hue-wrong);
+    background-color: red;
 }
 
-
+/* question container */
 .container {
     width: 800px;
     max-width: 80%;
     background-color: white;
     border-radius: 5px;
     padding: 20;
-    box-shadow: 0 0 10px  2px;
+    box-shadow: 0 0 20px  2px;
 }
 
 .btn-grid {
@@ -53,7 +55,7 @@ body.wrong {
 }
 
 .btn {
-    --hue: var(--hue-neutral);
+    /* --hue: var(--hue-neutral); */
     border: 1px solid 100%, 30%;
     background-color: #c2f0fc;
     border-radius: 5px;
@@ -68,19 +70,15 @@ body.wrong {
 }
 
 .btn.correct {
-    /* --hue: var(--hue-correct), */
+    
     background-color:  green;
      
 }
 
 .btn.wrong {
-    /* --hue: var(--hue-wrong), */
+   
     background-color: red;
 }
-
-
-
-
 
 .next-btn, 
 .start-btn {

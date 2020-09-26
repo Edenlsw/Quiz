@@ -1,3 +1,7 @@
+// import questions for quiz 
+import { questions } from "./questions.js";
+
+
 const startButton = document.getElementById("start-btn");
 const nextButton = document.getElementById("next-btn");
 const questionContainerElement = document.getElementById("question-container");
@@ -77,160 +81,37 @@ function clearStatusClass(element) {
   element.classList.remove("wrong");
 }
 
-// the questions below with answers
-const questions = [
-  {
-    question:
-      "Which rap duo joined forces to release the album Watch The Throne in 2011?",
-    answer: [
-      {
-        text: "Drake & Future",
-        correct: false,
-      },
-      {
-        text: "Meek Mill & Rick Ross",
-        correct: false,
-      },
-      {
-        text: "Lil Wayne & Drake",
-        correct: false,
-      },
-      {
-        text: "Jay-Z & Kanye West",
-        correct: true,
-      },
-    ],
-  },
 
-  {
-    question:
-      "Migos are made up of rappers Quavo, Offset and Takeoff, but which is married to Cardi B?",
-    answer: [
-      {
-        text: "Quavo",
-        correct: false,
-      },
-      {
-        text: "Offset",
-        correct: true,
-      },
-      {
-        text: "Takeoff",
-        correct: false,
-      },
-    ],
-  },
+// Show Results 
 
-  {
-    question:
-      "What was the name of the record label Diddy began back in 1993 which helped launch the career of The Notorious B.I.G?",
-    answer: [
-      {
-        text: "Def Jam Recordings",
-        correct: false,
-      },
-      {
-        text: "Bad Boy Records",
-        correct: true,
-      },
-      {
-        text: "Death Row Records",
-        correct: false,
-      },
-      {
-        text: "OVO Records",
-        correct: false,
-      },
-    ],
-  },
 
-  {
-    question:
-      "Kanye West famously interrupted the acceptance speech of which singer at the 2009 MTV Video Music Awards?",
-    answer: [
-      {
-        text: "Taylor SWift",
-        correct: true,
-      },
-      {
-        text: "Katy Pery",
-        correct: false,
-      },
-      {
-        text: "Lady Gaga",
-        correct: false,
-      },
-      {
-        text: "Shakira",
-        correct: false,
-      },
-    ],
-  },
 
-  {
-    question:
-      "Kanye West famously interrupted the acceptance speech of which singer at the 2009 MTV Video Music Awards?",
-    answer: [
-      {
-        text: "Taylor SWift",
-        correct: true,
-      },
-      {
-        text: "Katy Pery",
-        correct: false,
-      },
-      {
-        text: "Lady Gaga",
-        correct: false,
-      },
-      {
-        text: "Shakira",
-        correct: false,
-      },
-    ],
-  },
-  {
-    question: "Where did Stormzy work before becoming a famous musician?",
-    answer: [
-      {
-        text: "Gym",
-        correct: false,
-      },
-      {
-        text: "Recod Shop",
-        correct: false,
-      },
-      {
-        text: "Oil Refinery",
-        correct: true,
-      },
-      {
-        text: "Tesco",
-        correct: false,
-      },
-    ],
-  },
 
-  {
-    question: "Where did Stormzy work before becoming a famous musician?",
-    answer: [
-      {
-        text: "Gym",
-        correct: false,
-      },
-      {
-        text: "Recod Shop",
-        correct: false,
-      },
-      {
-        text: "Oil Refinery",
-        correct: true,
-      },
-      {
-        text: "Tesco",
-        correct: false,
-      },
-    ],
-  },
 
-];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
