@@ -1,82 +1,3 @@
-const startButton = document.getElementById("start-btn");
-const nextButton = document.getElementById("next-btn");
-const questionContainerElement = document.getElementById("question-container");
-
-const questionElement = document.getElementById("question");
-const answerButtonsElement = document.getElementById("answer-buttons");
-
-let shuffledQuestions, currentQuestionIndex;
-
-startButton.addEventListener("click", startGame);
-nextButton.addEventListener("click", () => {
-  currentQuestionIndex++;
-  setNextQuestion();
-});
-
-function startGame() {
-  startButton.classList.add("hide");
-  shuffledQuestions = questions.sort(() => Math.random() - 0.5);
-  currentQuestionIndex = 0;
-  questionContainerElement.classList.remove("hide");
-  setNextQuestion();
-}
-
-function setNextQuestion() {
-  resetState();
-  showQuestion(shuffledQuestions[currentQuestionIndex]);
-}
-
-function showQuestion(question) {
-  questionElement.innerHTML = question.question;
-  question.answer.forEach((answer) => {
-    const button = document.createElement("button");
-    button.innerText = answer.text;
-    button.classList.add("btn");
-    if (answer.correct) {
-      button.dataset.correct = answer.correct;
-    }
-    button.addEventListener("click", selectAnswer);
-    answerButtonsElement.appendChild(button);
-  });
-}
-
-function resetState() {
-  clearStatusClass(document.body);
-  nextButton.classList.add("hide");
-  while (answerButtonsElement.firstChild) {
-    answerButtonsElement.removeChild(answerButtonsElement.firstChild);
-  }
-}
-
-function selectAnswer(e) {
-  const selectedButton = e.target;
-  const correct = selectedButton.dataset.correct;
-  setStatusClass(document.body, correct);
-  Array.from(answerButtonsElement.children).forEach((button) => {
-    setStatusClass(button, button.dataset.correct);
-  });
-  if (shuffledQuestions.length > currentQuestionIndex + 1) {
-    nextButton.classList.remove("hide");
-  } else {
-    (startButton.innerText = "Start Over"),
-      startButton.classList.remove("hide");
-  }
-}
-
-function setStatusClass(element, correct) {
-  clearStatusClass(element);
-  if (correct) {
-    element.classList.add("correct");
-  } else {
-    element.classList.add("wrong");
-  }
-}
-
-function clearStatusClass(element) {
-  element.classList.remove("correct");
-  element.classList.remove("wrong");
-}
-
 // the questions below with answers
 const questions = [
   {
@@ -149,7 +70,7 @@ const questions = [
       "Kanye West famously interrupted the acceptance speech of which singer at the 2009 MTV Video Music Awards?",
     answer: [
       {
-        text: "Taylor SWift",
+        text: "Taylor Swift",
         correct: true,
       },
       {
@@ -172,7 +93,7 @@ const questions = [
       "Kanye West famously interrupted the acceptance speech of which singer at the 2009 MTV Video Music Awards?",
     answer: [
       {
-        text: "Taylor SWift",
+        text: "Taylor Swift",
         correct: true,
       },
       {
@@ -212,25 +133,146 @@ const questions = [
   },
 
   {
-    question: "Where did Stormzy work before becoming a famous musician?",
+    question:
+      "N.W.A came out in the late 80’s but made their mark in the early 90’s! Can you name all of the original members?",
     answer: [
       {
-        text: "Gym",
+        text: "Dr. Dre, Ice Cube, Eazy-E, and MC Ren",
         correct: false,
       },
       {
-        text: "Recod Shop",
-        correct: false,
-      },
-      {
-        text: "Oil Refinery",
+        text: "Dr. Dre, Ice Cube, Eazy-E, DJ Yella and MC Ren",
         correct: true,
       },
       {
-        text: "Tesco",
+        text: "Dr. Dre, Ice Cube, and Eazy- E",
+        correct: false,
+      },
+      {
+        text: "Dr. Dre, Ice Cube, and Eazy- E, Snoop Dogg ",
         correct: false,
       },
     ],
   },
 
+  {
+    question: "What is Cardi B's real name",
+    answer: [
+      {
+        text: "Belcalis Margarita Almánzar",
+        correct: false,
+      },
+      {
+        text: "Belcalis Mary Almánzar",
+        correct: false,
+      },
+      {
+        text: "Belcalis Doreen Almánzar",
+        correct: false,
+      },
+      {
+        text: "Belcalis Marlenis Almánzar",
+        correct: true,
+      },
+    ],
+  },
+
+  {
+    question:
+      "Tupac famously had phrase words tattooed on his stomach - what was it?",
+    answer: [
+      {
+        text: "Thug Life",
+        correct: true,
+      },
+      {
+        text: "Y.O.L.O",
+        correct: false,
+      },
+    ],
+  },
+
+  {
+    question: "Which rapper famously coined the term 'Bling Bling'?",
+    answer: [
+      {
+        text: "RUN DMC",
+        correct: false,
+      },
+      {
+        text: "Rick Ross",
+        correct: false,
+      },
+      {
+        text: "Lil Wayne",
+        correct: true,
+      },
+      {
+        text: "Birdman",
+        correct: false,
+      },
+    ],
+  },
+
+  {
+    question: "What year did Tupac release his iconic song, “California Love?",
+    answer: [
+      {
+        text: "1996",
+        correct: false,
+      },
+      {
+        text: "1997",
+        correct: false,
+      },
+      {
+        text: "1994",
+        correct: false,
+      },
+      {
+        text: "1995",
+        correct: true,
+      },
+    ],
+  },
+
+  {
+    question: "What does Wutang’s song “C.R.E.A.M.”  stand for?",
+    answer: [
+      {
+        text: "Cash Rules Everything Around Me",
+        correct: true,
+      },
+      {
+        text: "Cash Runs Everything And Me",
+        correct: false,
+      },
+      {
+        text: "Cash Rules Excellence And Motivates",
+        correct: false,
+      },
+    ],
+  },
+
+  {
+    question: "Who is featured on 2pac's - California Love?",
+    answer: [
+      {
+        text: "Snoop Dogg",
+        correct: false,
+      },
+      {
+        text: "Ice Cube",
+        correct: false,
+      },
+      {
+        text: "Dre. Dre",
+        correct: true,
+      },
+      {
+        text: "The Notorious B.I.G",
+        correct: false,
+      },
+    ],
+  },
 ];
