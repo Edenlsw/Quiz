@@ -2,6 +2,8 @@
 import { questions } from "./questions.js";
 
 
+// starts game
+
 const startButton = document.getElementById("start-btn");
 const nextButton = document.getElementById("next-btn");
 const questionContainerElement = document.getElementById("question-container");
@@ -11,6 +13,7 @@ const answerButtonsElement = document.getElementById("answer-buttons");
 
 let shuffledQuestions, currentQuestionIndex;
 
+
 startButton.addEventListener("click", startGame);
 nextButton.addEventListener("click", () => {
   currentQuestionIndex++;
@@ -18,12 +21,18 @@ nextButton.addEventListener("click", () => {
 });
 
 function startGame() {
+    // hides button when clicked
   startButton.classList.add("hide");
+//   random question generator 
   shuffledQuestions = questions.sort(() => Math.random() - 0.5);
   currentQuestionIndex = 0;
+//   shows container background 
   questionContainerElement.classList.remove("hide");
   setNextQuestion();
 }
+
+
+// set next questions 
 
 function setNextQuestion() {
   resetState();
@@ -32,10 +41,13 @@ function setNextQuestion() {
 
 function showQuestion(question) {
   questionElement.innerHTML = question.question;
+
   question.answer.forEach((answer) => {
     const button = document.createElement("button");
+
     button.innerText = answer.text;
     button.classList.add("btn");
+
     if (answer.correct) {
       button.dataset.correct = answer.correct;
     }
@@ -44,6 +56,7 @@ function showQuestion(question) {
   });
 }
 
+// hides buttons / clears for next question 
 function resetState() {
   clearStatusClass(document.body);
   nextButton.classList.add("hide");
@@ -52,7 +65,10 @@ function resetState() {
   }
 }
 
+
+// select answers 
 function selectAnswer(e) {
+    //  
   const selectedButton = e.target;
   const correct = selectedButton.dataset.correct;
   setStatusClass(document.body, correct);
@@ -62,7 +78,7 @@ function selectAnswer(e) {
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove("hide");
   } else {
-    (startButton.innerText = "Start Over"),
+    (startButton.innerText = "End of Quiz"),
       startButton.classList.remove("hide");
   }
 }
@@ -84,34 +100,13 @@ function clearStatusClass(element) {
 
 // Show Results 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function checkResults() {
+   
+    if (questions === true) {
+        count++;
+    } else {
+        return;
+}
+alert("You've got "+count+" marks" )
+}
 
