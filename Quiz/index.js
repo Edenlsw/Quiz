@@ -1,6 +1,14 @@
 // import questions for quiz 
 import { questions } from "./questions.js";
 
+let score = 0;
+// const userAnswer = [question.answer.correct]
+
+// userAnswer.forEach((answer, index) => {
+//   if(answer === true) {
+//     score ++;
+//   }
+// })
 
 // starts game
 
@@ -8,6 +16,8 @@ const startButton = document.getElementById("start-btn");
 const nextButton = document.getElementById("next-btn");
 const submitButton= document.getElementById("submit-btn");
 const questionContainerElement = document.getElementById("question-container");
+let scoreResults = document.getElementById('score-card');
+
 
 const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answer-buttons");
@@ -20,7 +30,7 @@ nextButton.addEventListener("click", () => {
   currentQuestionIndex++;
   setNextQuestion();
 });
-submitButton.addEventListener("click", endGame)
+
 
 function startGame() {
     // hides button when clicked
@@ -56,6 +66,10 @@ function showQuestion(question) {
     button.addEventListener("click", selectAnswer);
     answerButtonsElement.appendChild(button);
   });
+    let scoreResults = 0
+  if (answer.correct) {
+    scoreResults ++;
+  }
 }
 
 // hides buttons / clears for next question 
@@ -99,24 +113,15 @@ function clearStatusClass(element) {
   element.classList.remove("wrong");
 }
 
-
-
-
-
-// Show Results 
-
-function checkResults() {
-   
-    if (i=0, questionElement === true, count ++) {
-        return alert("You've got "+count+" marks" )
-}
-}
-
-
 // end game
-function endGame() {
-    // hides button when clicked
-  submitButton.classList.add("hide");
-  questionContainerElement.classList.remove("hide")
-  
-}
+
+
+
+// let score = 0;
+// const userAnswer = [question.answer.correct]
+
+// userAnswer.forEach((answer, index) => {
+//   if(answer === true) {
+//     score ++;
+//   }
+// })

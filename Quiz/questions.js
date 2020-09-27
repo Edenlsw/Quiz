@@ -277,3 +277,12 @@ export const questions = [
     ],
   },
 ];
+
+// let score = 0;
+// const userAnswer = [question.answer.correct]
+
+// userAnswer.forEach((answer, index) => {
+//   if(answer === true) {
+//     score ++;
+//   }
+// })
