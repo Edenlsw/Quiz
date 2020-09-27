@@ -6,6 +6,7 @@ import { questions } from "./questions.js";
 
 const startButton = document.getElementById("start-btn");
 const nextButton = document.getElementById("next-btn");
+const submitButton= document.getElementById("submit-btn");
 const questionContainerElement = document.getElementById("question-container");
 
 const questionElement = document.getElementById("question");
@@ -19,6 +20,7 @@ nextButton.addEventListener("click", () => {
   currentQuestionIndex++;
   setNextQuestion();
 });
+submitButton.addEventListener("click", endGame)
 
 function startGame() {
     // hides button when clicked
@@ -78,8 +80,8 @@ function selectAnswer(e) {
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove("hide");
   } else {
-    (startButton.innerText = "End of Quiz"),
-      startButton.classList.remove("hide");
+    (submitButton.innerText = "Submit"),
+      submitButton.classList.remove("hide");
   }
 }
 
@@ -98,15 +100,23 @@ function clearStatusClass(element) {
 }
 
 
+
+
+
 // Show Results 
 
 function checkResults() {
    
-    if (questions === true) {
-        count++;
-    } else {
-        return;
+    if (i=0, questionElement === true, count ++) {
+        return alert("You've got "+count+" marks" )
 }
-alert("You've got "+count+" marks" )
 }
 
+
+// end game
+function endGame() {
+    // hides button when clicked
+  submitButton.classList.add("hide");
+  questionContainerElement.classList.remove("hide")
+  
+}

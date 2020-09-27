@@ -76,7 +76,8 @@ body.wrong {
 }
 
 .next-btn,
-.start-btn{
+.start-btn,
+.submit-btn{
   font-size: 45px;
   font-weight: bold;
   padding: 10px 20px;
