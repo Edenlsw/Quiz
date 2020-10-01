@@ -92,7 +92,9 @@ function selectAnswer(e) {
 if (correct) {
   score ++;
   const results = document.createTextNode(score.toString())
-  scoreResults.innerHTML = ""
+  // use this to empty score 
+  while (scoreResults.firstChild) scoreResults.removeChild(scoreResults.firstChild);
+  // scoreResults.innerHTML = ""
   scoreResults.appendChild(results)
 }
 
@@ -120,3 +122,4 @@ function clearStatusClass(element) {
 }
 
 // end game
+// Restart Game 
