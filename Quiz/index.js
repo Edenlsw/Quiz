@@ -2,8 +2,7 @@
 import { questions } from "./questions.js";
 
 let score = 0;
-// const userAnswer = [question.answer.correct]
-
+// const userAnswer = [question.answer.correct],
 // userAnswer.forEach((answer, index) => {
 //   if(answer === true) {
 //     score ++;
@@ -17,6 +16,7 @@ const nextButton = document.getElementById("next-btn");
 const submitButton= document.getElementById("submit-btn");
 const questionContainerElement = document.getElementById("question-container");
 let scoreResults = document.getElementById('score-card');
+
 
 
 const questionElement = document.getElementById("question");
@@ -66,10 +66,6 @@ function showQuestion(question) {
     button.addEventListener("click", selectAnswer);
     answerButtonsElement.appendChild(button);
   });
-    let scoreResults = 0
-  if (answer.correct) {
-    scoreResults ++;
-  }
 }
 
 // hides buttons / clears for next question 
@@ -91,6 +87,16 @@ function selectAnswer(e) {
   Array.from(answerButtonsElement.children).forEach((button) => {
     setStatusClass(button, button.dataset.correct);
   });
+// Hanlde answer
+
+if (correct) {
+  score ++;
+  const results = document.createTextNode(score.toString())
+  scoreResults.innerHTML = ""
+  scoreResults.appendChild(results)
+}
+
+
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove("hide");
   } else {
@@ -114,6 +120,3 @@ function clearStatusClass(element) {
 }
 
 // end game
-
-
-
