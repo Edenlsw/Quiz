@@ -2,14 +2,7 @@
 import { questions } from "./questions.js";
 
 let score = 0;
-// const userAnswer = [question.answer.correct],
-// userAnswer.forEach((answer, index) => {
-//   if(answer === true) {
-//     score ++;
-//   }
-// })
 
-// starts game
 
 const startButton = document.getElementById("start-btn");
 const nextButton = document.getElementById("next-btn");
@@ -86,7 +79,8 @@ function selectAnswer(e) {
   setStatusClass(document.body, correct);
   Array.from(answerButtonsElement.children).forEach((button) => {
     setStatusClass(button, button.dataset.correct);
-  });
+  })
+    ;
 // Hanlde answer
 
 if (correct) {
@@ -98,15 +92,15 @@ if (correct) {
   scoreResults.appendChild(results)
 }
 
-
+// restart quiz
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove("hide");
   } else {
-    (submitButton.innerText = "Submit"),
-      submitButton.classList.remove("hide");
+    startButton.innerText = 'Restart'
+    startButton.classList.remove('hide')
   }
 }
-
+// changes background colour depending on in answer is correct or wrong
 function setStatusClass(element, correct) {
   clearStatusClass(element);
   if (correct) {
@@ -121,5 +115,3 @@ function clearStatusClass(element) {
   element.classList.remove("wrong");
 }
 
-// end game
-// Restart Game 
