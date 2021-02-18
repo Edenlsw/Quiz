@@ -80,13 +80,27 @@ function resetState() {
 
 // select answers 
 function selectAnswer(e) {
-    //  
-  const selectedButton = e.target;
-  const correct = selectedButton.dataset.correct;
-  setStatusClass(document.body, correct);
-  Array.from(answerButtonsElement.children).forEach((button) => {
-    setStatusClass(button, button.dataset.correct);
-  });
+  const selectedButton = e.target
+  const correct = selectedButton.dataset.correct
+  setStatusClass(document.body, correct)
+  Array.from(answerButtonsElement.children).forEach(button => {
+    setStatusClass(button, button.dataset.correct)
+  })
+  if (shuffledQuestions.length > currentQuestionIndex + 1) {
+    nextButton.classList.remove('hide')
+  } else {
+    startButton.innerText = 'Restart'
+    startButton.classList.remove('hide')
+  }
+  if (correct) {
+    score ++;
+    const results = document.createTextNode(score.toString())
+    // use this to empty score 
+    while (scoreResults.firstChild) scoreResults.removeChild(scoreResults.firstChild);
+    // scoreResults.innerHTML = ""
+    scoreResults.appendChild(results)
+  }
+}
 // Hanlde answer
 
 if (correct) {
@@ -99,13 +113,6 @@ if (correct) {
 }
 
 
-  if (shuffledQuestions.length > currentQuestionIndex + 1) {
-    nextButton.classList.remove("hide");
-  } else {
-    (submitButton.innerText = "Submit"),
-      submitButton.classList.remove("hide");
-  }
-}
 
 function setStatusClass(element, correct) {
   clearStatusClass(element);
