@@ -36,7 +36,7 @@ export const projectsData = [
     info:
       'The concept of GoWonder, is a simple way to explore a city. You simply type in your location, add a filter here and there, press the button, and it will generate an activity for you to do based on your filters and preferences.',
     info2: 'The tools used were JavaScript, React, Node JS, MongDB and CSS ',
-    url: '',
+    // url: '',
     repo: 'https://https://github.com/Edenlsw/black-codher-personal-project', // if no repo, the button will not show up
   },
   {
@@ -96,5 +96,5 @@ export const footerData = {
 
 // Github start/fork buttons
 export const githubButtons = {
-  isEnabled: true, // set to false to disable the GitHub stars/fork buttons
+  isEnabled: false, // set to false to disable the GitHub stars/fork buttons
 };
