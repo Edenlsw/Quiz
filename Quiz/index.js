@@ -3,12 +3,12 @@ import { questions } from "./questions.js";
 
 let score = 0;
 
-
 const startButton = document.getElementById("start-btn");
 const nextButton = document.getElementById("next-btn");
 const submitButton= document.getElementById("submit-btn");
 const questionContainerElement = document.getElementById("question-container");
 let scoreResults = document.getElementById('score-card');
+let resetScoreResults= document.getElementById('score-card');
 
 
 
@@ -18,12 +18,17 @@ const answerButtonsElement = document.getElementById("answer-buttons");
 let shuffledQuestions, currentQuestionIndex;
 
 
-startButton.addEventListener("click", startGame);
+startButton.addEventListener("click", startGame, resetScore);
 nextButton.addEventListener("click", () => {
   currentQuestionIndex++;
   setNextQuestion();
 });
 
+
+function resetScore() {
+
+
+}
 
 function startGame() {
     // hides button when clicked
@@ -81,7 +86,7 @@ function selectAnswer(e) {
     setStatusClass(button, button.dataset.correct);
   })
     ;
-// Hanlde answer
+// Handle answer
 
 if (correct) {
   score ++;
@@ -98,8 +103,17 @@ if (correct) {
   } else {
     startButton.innerText = 'Restart'
     startButton.classList.remove('hide')
+    
   }
 }
+
+
+
+
+
+
+
+
 // changes background colour depending on in answer is correct or wrong
 function setStatusClass(element, correct) {
   clearStatusClass(element);

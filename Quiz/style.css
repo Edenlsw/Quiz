@@ -94,3 +94,30 @@ body.wrong {
 }
 
 
+
+
+/* responsive css */
+
+/* screen size laptop - pc */
+@media screen and (max-width: 960px) {
+ 
+}
+
+
+
+
+
+/* tablet size */
+@media screen and (max-width: 768px) {
+
+
+  
+}
+
+/* phone size */
+@media screen and (max-width: 480px) {
+ 
+  
+
+  
+} 
