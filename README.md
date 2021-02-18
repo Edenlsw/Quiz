@@ -6,5 +6,7 @@ The brief for this project was to create a quiz that loops through the array of 
 Then to create a function that 
 
 •	Shows the results
+
 •	keeps tracks of how many answers the user has correct
+
 •	changes styling if the answer is right or wrong. 
