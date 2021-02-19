@@ -10,3 +10,11 @@ Then to create a function that
 •	keeps tracks of how many answers the user has correct
 
 •	changes styling if the answer is right or wrong. 
+
+
+
+![screenshot](Quiz/images/start.png)
+
+![screenshot](Quiz/images/yes.png)
+
+![screenshot](Quiz/images/no.png)
