@@ -33,6 +33,7 @@ nextButton.addEventListener("click", () => {
 
 
 function startGame() {
+  score = 0
     // hides button when clicked
   startButton.classList.add("hide");
 //   random question generator 
