@@ -33,7 +33,7 @@ nextButton.addEventListener("click", () => {
 
 
 function startGame() {
-  score = 0
+  setScore(document.createTextNode(score.toString()))
     // hides button when clicked
   startButton.classList.add("hide");
 //   random question generator 
@@ -96,24 +96,23 @@ function selectAnswer(e) {
   if (correct) {
     score ++;
     const results = document.createTextNode(score.toString())
-    // use this to empty score 
-    while (scoreResults.firstChild) scoreResults.removeChild(scoreResults.firstChild);
-    // scoreResults.innerHTML = ""
-    scoreResults.appendChild(results)
+    setScore(results)
   }
 }
 // Hanlde answer
 
 if (correct) {
   score ++;
-  const results = document.createTextNode(score.toString())
-  // use this to empty score 
-  while (scoreResults.firstChild) scoreResults.removeChild(scoreResults.firstChild);
-  // scoreResults.innerHTML = ""
-  scoreResults.appendChild(results)
+  const results = document.createTextNode(score.toString()) 
+  setScore(results)
 }
 
 
+function setScore(results) {
+  // use this to empty score
+  while (scoreResults.firstChild) scoreResults.removeChild(scoreResults.firstChild);
+  scoreResults.appendChild(results)
+}
 
 function setStatusClass(element, correct) {
   clearStatusClass(element);
